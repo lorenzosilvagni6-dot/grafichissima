@@ -1,0 +1,60 @@
+---
+---
+/* Grafichissima V4 — sharper photography + minimal line icons */
+:root{--v4-photo:url("data:image/jpeg;base64,{% include_relative assets/v4small/00.txt %}{% include_relative assets/v4small/01.txt %}{% include_relative assets/v4small/02.txt %}{% include_relative assets/v4small/03.txt %}{% include_relative assets/v4small/04.txt %}{% include_relative assets/v4small/05.txt %}{% include_relative assets/v4small/06.txt %}{% include_relative assets/v4small/07.txt %}{% include_relative assets/v4small/08.txt %}{% include_relative assets/v4small/09.txt %}{% include_relative assets/v4small/10.txt %}")}
+
+.grain{opacity:.018!important}
+.hero-art{background-image:var(--v4-photo)!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}
+.hero-art>img{opacity:0!important}
+.hero-art::before{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.10))!important;z-index:1}
+.hero-caption{z-index:2!important}
+
+.product-visual{background-image:var(--v4-photo)!important;background-size:290% auto!important;background-repeat:no-repeat!important;box-shadow:0 22px 35px rgba(0,0,0,.24)!important}
+.product-visual>*{opacity:0!important}
+.product-card[data-product="menu"] .product-visual{background-position:82% 7%!important}
+.product-card[data-product="placemat"] .product-visual{background-position:8% 72%!important}
+.product-card[data-product="coaster"] .product-visual{background-position:8% 64%!important}
+.product-card[data-product="bread"] .product-visual{background-position:5% 7%!important}
+.product-card[data-product="place"] .product-visual{background-position:43% 61%!important}
+.product-card[data-product="bill"] .product-visual{background-position:86% 80%!important}
+.product-card:hover .product-visual{transform:scale(1.018)!important;filter:none!important}
+
+.product-choices .product-choice .choice-thumb{background-image:var(--v4-photo)!important;background-size:300% auto!important;background-repeat:no-repeat!important}
+.product-choices .product-choice:nth-child(1) .choice-thumb{background-position:82% 6%!important}
+.product-choices .product-choice:nth-child(2) .choice-thumb{background-position:9% 72%!important}
+.product-choices .product-choice:nth-child(3) .choice-thumb{background-position:9% 66%!important}
+.product-choices .product-choice:nth-child(4) .choice-thumb{background-position:4% 8%!important}
+.product-choices .product-choice:nth-child(5) .choice-thumb{background-position:44% 61%!important}
+.product-choices .product-choice:nth-child(6) .choice-thumb{background-position:86% 80%!important}
+
+.preview-photo-object{background-image:var(--v4-photo)!important;background-size:285% auto!important;background-repeat:no-repeat!important;filter:none!important}
+#previewObject[aria-label*="Menù"]{background-position:82% 7%!important}
+#previewObject[aria-label*="Tovaglietta"]{background-position:8% 72%!important}
+#previewObject[aria-label*="Sottobicchiere"]{background-position:8% 65%!important}
+#previewObject[aria-label*="Porta pane"]{background-position:5% 7%!important}
+#previewObject[aria-label*="Segna posto"]{background-position:43% 61%!important}
+#previewObject[aria-label*="Porta conto"]{background-position:86% 80%!important}
+
+.social-card{background-image:var(--v4-photo)!important;background-size:250% auto!important;background-repeat:no-repeat!important;filter:none!important}
+.social-card>img{opacity:0!important}
+.social-1{background-position:77% 12%!important}
+.social-2{background-position:10% 61%!important}
+.social-3{background-position:88% 80%!important}
+
+/* Unicode arrows are hidden and redrawn as restrained 1px line icons. */
+.text-link span{font-size:0!important;width:11px;height:11px;display:inline-block;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);margin-left:8px}
+.product-card>button{font-size:0!important;display:grid!important;place-items:center!important}
+.product-card>button::before{content:"";width:10px;height:10px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.social-footer a{font-size:0!important;display:inline-flex!important;align-items:center!important;gap:9px}
+.social-footer a::before{font-size:10px;letter-spacing:.07em}
+.social-footer a:nth-of-type(1)::before{content:"Instagram"}
+.social-footer a:nth-of-type(2)::before{content:"Pinterest"}
+.social-footer a:nth-of-type(3)::before{content:"LinkedIn"}
+.social-footer a::after{content:"";width:8px;height:8px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+@media(max-width:680px){
+  .hero-art{background-position:55% center!important}
+  .product-visual{min-height:270px!important;background-size:255% auto!important}
+  .product-choices .product-choice .choice-thumb{background-size:280% auto!important}
+  .preview-photo-object{width:min(92%,430px)!important;background-size:260% auto!important}
+}
