@@ -1,0 +1,64 @@
+/* Grafichissima V4 — Hi-Res photographic overrides */
+:root{--v4-photo:url("../assets/collection-hires.jpg")}
+.grain{opacity:.018!important}
+
+/* Hero: original high-resolution collection photograph */
+.hero-art{background-image:var(--v4-photo)!important;background-size:cover!important;background-position:center 48%!important;background-repeat:no-repeat!important}
+.hero-art::before{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.10))!important}
+
+/* Product cards: use precise crops of the same original image instead of low-res derivatives */
+.product-visual{background-image:var(--v4-photo)!important;background-repeat:no-repeat!important;background-color:#2a2722!important;image-rendering:auto}
+.visual-menu{background-size:158% auto!important;background-position:78% 20%!important}
+.visual-placemat{background-size:150% auto!important;background-position:42% 86%!important}
+.visual-coaster{background-size:180% auto!important;background-position:7% 72%!important}
+.visual-bread{background-size:178% auto!important;background-position:0% 22%!important}
+.visual-place{background-size:198% auto!important;background-position:48% 70%!important}
+.visual-bill{background-size:178% auto!important;background-position:86% 84%!important}
+.product-card:hover .product-visual{transform:scale(1.018)!important;filter:none!important}
+
+/* Configurator thumbnails */
+.product-choices .product-choice .choice-thumb{background-image:var(--v4-photo)!important;background-repeat:no-repeat!important}
+.product-choices .product-choice:nth-child(1) .choice-thumb{background-size:158% auto!important;background-position:78% 20%!important}
+.product-choices .product-choice:nth-child(2) .choice-thumb{background-size:150% auto!important;background-position:42% 86%!important}
+.product-choices .product-choice:nth-child(3) .choice-thumb{background-size:180% auto!important;background-position:7% 72%!important}
+.product-choices .product-choice:nth-child(4) .choice-thumb{background-size:178% auto!important;background-position:0% 22%!important}
+.product-choices .product-choice:nth-child(5) .choice-thumb{background-size:198% auto!important;background-position:48% 70%!important}
+.product-choices .product-choice:nth-child(6) .choice-thumb{background-size:178% auto!important;background-position:86% 84%!important}
+
+/* Configurator large photographic preview */
+.preview-photo-object{background-image:var(--v4-photo)!important;background-repeat:no-repeat!important;filter:none!important}
+#previewObject[aria-label*="Menù"]{background-size:158% auto!important;background-position:78% 20%!important}
+#previewObject[aria-label*="Tovaglietta"]{background-size:150% auto!important;background-position:42% 86%!important}
+#previewObject[aria-label*="Sottobicchiere"]{background-size:180% auto!important;background-position:7% 72%!important}
+#previewObject[aria-label*="Porta pane"]{background-size:178% auto!important;background-position:0% 22%!important}
+#previewObject[aria-label*="Segna posto"]{background-size:198% auto!important;background-position:48% 70%!important}
+#previewObject[aria-label*="Porta conto"]{background-size:178% auto!important;background-position:86% 84%!important}
+
+/* Journal / inspiration */
+.social-card{background-image:var(--v4-photo)!important;background-repeat:no-repeat!important;filter:none!important}
+.social-1{background-size:cover!important;background-position:center!important}
+.social-2{background-size:165% auto!important;background-position:78% 22%!important}
+.social-3{background-size:180% auto!important;background-position:86% 84%!important}
+
+/* Replace Unicode/emoji arrows with minimal line icons */
+.text-link span{font-size:0!important;width:9px;height:9px;display:inline-block;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg);margin-left:7px;vertical-align:1px}
+.product-card>button{font-size:0!important;display:grid!important;place-items:center!important}
+.product-card>button::before{content:"";width:9px;height:9px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+.social-footer a{font-size:0!important;display:inline-flex!important;align-items:center!important;gap:9px!important}
+.social-footer a:nth-of-type(1)::before{content:"Instagram";font-size:10px}
+.social-footer a:nth-of-type(2)::before{content:"Pinterest";font-size:10px}
+.social-footer a:nth-of-type(3)::before{content:"LinkedIn";font-size:10px}
+.social-footer a::after{content:"";width:8px;height:8px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:rotate(45deg)}
+
+/* Mobile refinement */
+@media(max-width:680px){
+  .hero-art{min-height:440px!important;background-position:center 46%!important}
+  .product-card{min-height:430px!important}
+  .product-visual{min-height:285px!important}
+  .visual-menu{background-size:145% auto!important}
+  .visual-bread{background-size:165% auto!important}
+  .visual-coaster{background-size:168% auto!important}
+  .visual-place{background-size:182% auto!important}
+  .visual-bill{background-size:165% auto!important}
+  .preview-photo-object{width:min(86%,390px)!important}
+}
