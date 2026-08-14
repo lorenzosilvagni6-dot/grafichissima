@@ -6,7 +6,7 @@ const products = {
       { id: 'square', label: 'Quadrato', sub: '23 × 23 cm' },
       { id: 'a5', label: 'A5', sub: '14,8 × 21 cm' }
     ],
-    preview: 'preview-menu'
+    preview: 'preview-menu', image: 'assets/menu.webp'
   },
   placemat: {
     name: 'Tovaglietta', base: 4.7,
@@ -19,7 +19,7 @@ const products = {
       { id: 'drop', label: 'Goccia', sub: 'misura libera' },
       { id: 'custom', label: 'Taglio custom', sub: 'su tracciato' }
     ],
-    preview: 'preview-placemat'
+    preview: 'preview-placemat', image: 'assets/placemat.webp'
   },
   coaster: {
     name: 'Sottobicchiere', base: 1.75,
@@ -28,17 +28,17 @@ const products = {
       { id: 'square', label: 'Quadrato', sub: '10 × 10 cm' },
       { id: 'custom', label: 'Custom', sub: 'su tracciato' }
     ],
-    preview: 'preview-coaster'
+    preview: 'preview-coaster', image: 'assets/coaster.webp'
   },
   bread: {
     name: 'Porta pane', base: 11.5,
     formats: [{ id: 'signature', label: 'Signature', sub: 'modello unico' }],
-    preview: 'preview-bread'
+    preview: 'preview-bread', image: 'assets/bread.webp'
   },
   place: {
     name: 'Segna posto', base: 2.6,
     formats: [{ id: 'signature', label: 'Signature', sub: 'modello unico' }],
-    preview: 'preview-place'
+    preview: 'preview-place', image: 'assets/place.webp'
   },
   bill: {
     name: 'Porta conto', base: 7.6,
@@ -46,7 +46,7 @@ const products = {
       { id: 'slim', label: 'Slim', sub: '11 × 22 cm' },
       { id: 'classic', label: 'Classic', sub: '13 × 24 cm' }
     ],
-    preview: 'preview-bill'
+    preview: 'preview-bill', image: 'assets/bill.webp'
   }
 };
 
@@ -81,8 +81,9 @@ const quantityInput = document.querySelector('#quantity');
 
 function buildProductChoices() {
   productChoices.innerHTML = Object.entries(products).map(([key,p], i) => `
-    <button class="choice ${key === state.product ? 'active' : ''}" type="button" data-product-choice="${key}">
-      ${p.name}<small>0${i+1}</small>
+    <button class="choice product-choice ${key === state.product ? 'active' : ''}" type="button" data-product-choice="${key}">
+      <span class="choice-thumb" style="background-image:url('${p.image}')"></span>
+      <span class="choice-copy">${p.name}<small>0${i+1}</small></span>
     </button>`).join('');
 }
 
@@ -127,15 +128,10 @@ function calculateEstimate() {
 }
 
 function updatePreviewShape() {
-  preview.className = 'preview-object ' + products[state.product].preview;
-  if (state.product === 'placemat') {
-    if (state.format === 'round') preview.classList.add('shape-round');
-    if (state.format === 'oval') preview.classList.add('shape-oval');
-    if (state.format === 'pentagon') preview.classList.add('shape-pentagon');
-    if (state.format === 'hexagon') preview.classList.add('shape-hexagon');
-    if (state.format === 'drop') preview.classList.add('shape-drop');
-  }
+  preview.className = 'preview-object preview-photo-object';
+  preview.style.backgroundImage = `url("${products[state.product].image}")`;
   preview.style.backgroundColor = state.color.value;
+  preview.setAttribute('aria-label', `Anteprima fotografica ${products[state.product].name}`);
 }
 
 function updateSummary() {
