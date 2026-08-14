@@ -9,13 +9,13 @@
   --gold: #b29868;
   --gold-2: #d1bc91;
   --radius: 3px;
-  --img-hero: url("assets/hero.webp");
-  --img-menu: url("assets/menu.webp");
-  --img-placemat: url("assets/placemat.webp");
-  --img-coaster: url("assets/coaster.webp");
-  --img-bread: url("assets/bread.webp");
-  --img-place: url("assets/place.webp");
-  --img-bill: url("assets/bill.webp");
+  --img-hero: url("../assets/hero.webp");
+  --img-menu: url("../assets/menu.webp");
+  --img-placemat: url("../assets/placemat.webp");
+  --img-coaster: url("../assets/coaster.webp");
+  --img-bread: url("../assets/bread.webp");
+  --img-place: url("../assets/place.webp");
+  --img-bill: url("../assets/bill.webp");
 }
 
 * { box-sizing: border-box; }
